@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/meet/pooja-workspace/CLionWorkspace/Assignment1/Line.h
+iostream
+-
+cstring
+-
+
+/home/meet/pooja-workspace/CLionWorkspace/Assignment1/LineList.h
+Line.h
+/home/meet/pooja-workspace/CLionWorkspace/Assignment1/Line.h
+
+/home/meet/pooja-workspace/CLionWorkspace/Assignment1/LineListTestDriver.cpp
+iostream
+-
+iomanip
+-
+fstream
+-
+cassert
+-
+string
+-
+Line.h
+/home/meet/pooja-workspace/CLionWorkspace/Assignment1/Line.h
+LineList.h
+/home/meet/pooja-workspace/CLionWorkspace/Assignment1/LineList.h
+
