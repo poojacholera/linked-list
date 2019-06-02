@@ -120,7 +120,7 @@ int main1(){
     cout<<temp <<strlen(temp)<< sizeof(temp)<<endl;
     cout<<lineptr<<strlen(lineptr)<< (sizeof(lineptr)/ sizeof(*lineptr))<<endl;*/
 
-    const char *c_linea = "First Line";
+    /*const char *c_linea = "First Line";
     const char *c_lineb = "First Line";
 
     LineList lista{};
@@ -129,7 +129,7 @@ int main1(){
     listb.push_back(c_lineb);
     lista.print();
     listb.print();
-    assert(lista==listb);
+    assert(lista==listb);*/
 
 //    Line someLine(c_line);          // lineLength = 2, capacity = 2
 //    someLine.push_back('X');   // lineLength = 3, capacity = 4
@@ -148,8 +148,30 @@ int main1(){
 //    cout<<"content of new line"<<endl;
 //    cout<<newLine << " "<<newLine.getCapacity()<< " "<<newLine.length()<<endl;
 
+    /*cout<<"test..."<<endl;
+    char *temp{new char[5]{'\0'}};
+    int j=0;
+    while(j<=4){
+        if(temp[j]=='\0')
+        { cout<<"true"<<endl;}
+        else{
+            cout<<"false"<<endl;
+        }
+        j++;
+    }*/
 
 
+
+    Line newLine("pooja");
+    int i=newLine.getCapacity()-1;
+    while(i>=0){
+        if(newLine.linePtr[i]=='\0')
+        { cout<<newLine.linePtr[i]<<" true"<<endl;}
+        else{
+            cout<<newLine.linePtr[i]<<" false"<<endl;
+        }
+        i--;
+    }
 
 }
 

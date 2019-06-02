@@ -40,8 +40,10 @@ const Line& Line::operator=(const Line& rhs){
             pop_back();
         }
         delete [] this->linePtr;
-        this->linePtr=new char[strlen(rhs.linePtr)+1];
+        this->linePtr=new char[rhs.getCapacity()]{'\0'};
         strcpy(this->linePtr,rhs.linePtr);
+        this->capacity=rhs.getCapacity();
+        this->lineLength=rhs.length();
     }
     return *this;
 }
@@ -65,7 +67,7 @@ int Line::getCapacity() const{
 void Line::resize(){
     if(full()){
         this->capacity*=2;
-        char *temp=new char[getCapacity()];
+        char *temp=new char[getCapacity()]{'\0'};
         strcpy(temp,linePtr);
         delete [] linePtr;
         linePtr=temp;
