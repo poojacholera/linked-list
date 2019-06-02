@@ -21,7 +21,7 @@ void test_linked_list_operations(LineList&);
 
 // -------
 
-int main(){
+int main1(){
 
     //testing Line ctor
     /*const char *s = "meet";
@@ -120,8 +120,18 @@ int main(){
     cout<<temp <<strlen(temp)<< sizeof(temp)<<endl;
     cout<<lineptr<<strlen(lineptr)<< (sizeof(lineptr)/ sizeof(*lineptr))<<endl;*/
 
+    const char *c_linea = "First Line";
+    const char *c_lineb = "First Line";
 
-    Line someLine("AB");          // lineLength = 2, capacity = 2
+    LineList lista{};
+    LineList listb{};
+    lista.push_back(c_linea);
+    listb.push_back(c_lineb);
+    lista.print();
+    listb.print();
+    assert(lista==listb);
+
+//    Line someLine(c_line);          // lineLength = 2, capacity = 2
 //    someLine.push_back('X');   // lineLength = 3, capacity = 4
 //    someLine.push_back('Y');   // lineLength = 4, capacity = 4
 //    someLine.push_back('Z');   // lineLength = 5, capacity = 8
@@ -132,15 +142,18 @@ int main(){
 //    cout<<"end..."<<endl;
 //    cout<<someLine<<endl;
 
-    Line newLine("ok");
-    cout<<newLine;
-    cin>>newLine;
-    cout<<"content of new line"<<endl;
-    cout<<newLine << " "<<newLine.getCapacity()<< " "<<newLine.length()<<endl;
+//    Line newLine("ok");
+//    cout<<newLine;
+//    cin>>newLine;
+//    cout<<"content of new line"<<endl;
+//    cout<<newLine << " "<<newLine.getCapacity()<< " "<<newLine.length()<<endl;
+
+
+
 
 }
 
-int main1()
+int main()
 {
    //const char * filename_a{ "C:\\input_a.txt" };
    const char * filename_a{ "/home/meet/Documents/5421/input_a.txt" };

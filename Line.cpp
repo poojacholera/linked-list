@@ -6,23 +6,29 @@
 #include "Line.h"
 
 Line::Line(const char *text){
-    if(strlen(text)>0){
-        lineLength=1;
-        capacity=lineLength;
-        this->linePtr=new char[getCapacity()];//points to a new char array
-        linePtr[0]=text[0];
-
-        int i=1;
+    cout<<"received line: "<<text<<endl;
+    /*if(strlen(text)>0){
+        lineLength=0;
+        capacity=1;//lineLength;
+        this->linePtr=new char[1];//points to a new char array
+//        *linePtr=*text;
+//        cout<<"after ctor work... "<<linePtr<<endl;
+        int i=0;
         while (i<=(strlen(text)-1)){
-            cout<<text[i]<< " at pos"<<i<<endl;
             this->push_back(text[i]);
             i++;
         }
     }
+    cout<<"after ctor work... "<<linePtr<<endl;*/
+//    cout<<" Line ctor"<<endl;
+    capacity=strlen(text);
+    lineLength=capacity;
+    this->linePtr=new char[this->lineLength];//points to a new char array
+    strcpy(linePtr,text);
 }
 
 Line::Line(const Line& l):Line(l.linePtr){
-   cout<<"in Line copy ctor"<<endl;
+
 }
  Line::~Line(){
    delete [] linePtr;
@@ -38,7 +44,6 @@ const Line& Line::operator=(const Line& rhs){
         delete [] this->linePtr;
         this->linePtr=new char[strlen(rhs.linePtr)+1];
         strcpy(this->linePtr,rhs.linePtr);
-        cout<<"in copy assign : "<<this->linePtr<<endl;
     }
     return *this;
 }
@@ -94,11 +99,7 @@ istream& operator>>( istream &in, Line& line){
     return in; // returns the istream&
 }
 bool operator==(const Line & line1, const Line & line2){
-    /*strcmp(line1.cstr(), line2.cstr());*/
-    cout<<line1.cstr()<<endl;
-    cout<<line2.cstr()<<endl;
-    cout<<"comparison: "<<strcmp(line1.cstr(), line2.cstr())<<endl;
-    return (strcmp(line1.cstr(), line2.cstr())==0);//!(strlen(line1.cstr())!= strlen(line2.cstr()));
+    return (strcmp(line1.cstr(), line2.cstr())==0);
 }
 // free function
 bool operator!= ( const Line & line1, const Line & line2) {
