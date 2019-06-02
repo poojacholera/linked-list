@@ -82,16 +82,18 @@ void Line::pop_back(){
 }
 // Overloads operator << as a friend
 ostream& operator<<(ostream &out, const Line&  line){
-    //out<<line.linePtr;
+    out<<line.linePtr;
     return out;
 }
 istream& operator>>( istream &in, Line& line){
     //Overloads operator>> as a friend
+    delete [] line.linePtr;
     in>>line.linePtr;
-    //line.linePtr[line.lineLength+1]='\r';
+    line.lineLength=strlen(line.linePtr);
+    line.capacity=line.lineLength;
     return in; // returns the istream&
 }
-bool operator== ( const Line & line1, const Line & line2){
+bool operator==(const Line & line1, const Line & line2){
     /*strcmp(line1.cstr(), line2.cstr());*/
     cout<<line1.cstr()<<endl;
     cout<<line2.cstr()<<endl;

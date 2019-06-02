@@ -122,14 +122,21 @@ int main(){
 
 
     Line someLine("AB");          // lineLength = 2, capacity = 2
-    someLine.push_back('X');   // lineLength = 3, capacity = 4
-    someLine.push_back('Y');   // lineLength = 4, capacity = 4
-    someLine.push_back('Z');   // lineLength = 5, capacity = 8
-    cout << "someLine: " << someLine.cstr()                       << endl; // ABXYZ
-    cout << "len: "           << someLine.length()          << endl; // len: 5
-    cout << "cap: "          << someLine.getCapacity() << endl; // cap: 8
+//    someLine.push_back('X');   // lineLength = 3, capacity = 4
+//    someLine.push_back('Y');   // lineLength = 4, capacity = 4
+//    someLine.push_back('Z');   // lineLength = 5, capacity = 8
+//    cout << "someLine: " << someLine.cstr()                       << endl; // ABXYZ
+//    cout << "len: "           << someLine.length()          << endl; // len: 5
+//    cout << "cap: "          << someLine.getCapacity() << endl; // cap: 8
 
+//    cout<<"end..."<<endl;
+//    cout<<someLine<<endl;
 
+    Line newLine("ok");
+    cout<<newLine;
+    cin>>newLine;
+    cout<<"content of new line"<<endl;
+    cout<<newLine << " "<<newLine.getCapacity()<< " "<<newLine.length()<<endl;
 
 }
 
