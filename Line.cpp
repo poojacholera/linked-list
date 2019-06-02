@@ -1,29 +1,24 @@
 //
-// Created by meet on 16/05/19.
+// Created by pooja on 16/05/19.
 //
 
 #include <iostream>
 #include "Line.h"
 
-//Line::Line() = default;
+Line::Line(const char *text){
+    if(strlen(text)>0){
+        lineLength=1;
+        capacity=lineLength;
+        this->linePtr=new char[getCapacity()];//points to a new char array
+        linePtr[0]=text[0];
 
-Line::Line(const char *text) {
- //   cout<<" Line ctor"<<endl;
-    capacity=strlen(text);
-    lineLength=capacity;
-    /*lineLength=1;
-    capacity=lineLength;*/
-    this->linePtr=new char[this->lineLength];//points to a new char array
-    strcpy(linePtr,text);
-
-    /*cout<<strlen(text)<<endl;
-    int i=0;
-    while (i!=(strlen(text))){
-        cout<<text[i]<< " at pos"<<i<<endl;
-        this->push_back(text[i]);
-        cout<<" len: "<<this->lineLength<<"  cap :"<< getCapacity()<< " value : " <<this->linePtr[i] <<endl;;
-        i++;
-    }*/
+        int i=1;
+        while (i<=(strlen(text)-1)){
+            cout<<text[i]<< " at pos"<<i<<endl;
+            this->push_back(text[i]);
+            i++;
+        }
+    }
 }
 
 Line::Line(const Line& l):Line(l.linePtr){
@@ -33,7 +28,7 @@ Line::Line(const Line& l):Line(l.linePtr){
    delete [] linePtr;
    linePtr= nullptr;
 }
-const Line& Line::operator=(const Line& rhs) {
+const Line& Line::operator=(const Line& rhs){
     //cout<<"in Line copy assignment"<<endl;
     if (this == &rhs) return *this;
     else{
@@ -67,9 +62,7 @@ int Line::getCapacity() const{
 void Line::resize(){
     if(full()){
         this->capacity*=2;
-        //cout<<"cap: "<<getCapacity()<<" : in resize"<<endl;
         char *temp=new char[getCapacity()];
-        //temp=linePtr;
         strcpy(temp,linePtr);
         delete [] linePtr;
         linePtr=temp;
@@ -77,37 +70,10 @@ void Line::resize(){
  }
 }
 // Appends ch to the end of this line
-void Line::push_back(const char& ch ){
-    cout<<linePtr[lineLength]<<" Last value : "<<ch<<endl;
+void Line::push_back(const char& ch){
     resize();
     linePtr[lineLength]=ch;
     lineLength++;
-    /*if( linePtr[lineLength]!= NULL){
-        cout<< "is full so resize"<<endl;
-
-    }*/
-    //copy array to new array of modified capacity
-    /*char *temp=new char[getCapacity()];
-    cout<<temp<<" :temp print"<<endl;
-    temp=linePtr;
-    unsigned int i = 0;
-    for( ;i < lineLength; i++){
-        temp[i] = linePtr[i];
-    }
-    //add new element at last and increase linlength
-    temp[i+1]=ch;
-    temp[lineLength]=ch;
-    cout<<temp<<" :temp print"<<endl;
-    lineLength++;
-    //deleting previous assignment of linePtr and then copying new temp to linePtr
-    delete[] linePtr;
-    linePtr=temp;
-    // remove temporary array pointer after its use
-    temp=nullptr;
-*/
-    //cout<<this->linePtr[lineLength]<<" Length: "<<length()<<"--"<<endl;
-
-
 }
 //Removes the last character in this line
 void Line::pop_back(){
@@ -115,15 +81,15 @@ void Line::pop_back(){
     lineLength--;
 }
 // Overloads operator << as a friend
- ostream& operator<<(ostream &out, const Line&  line){
+ostream& operator<<(ostream &out, const Line&  line){
     //out<<line.linePtr;
     return out;
 }
- istream& operator>>( istream &in, Line& line){
+istream& operator>>( istream &in, Line& line){
     //Overloads operator>> as a friend
-     in>>line.linePtr;
-     //line.linePtr[line.lineLength+1]='\r';
-     return in; // returns the istream&
+    in>>line.linePtr;
+    //line.linePtr[line.lineLength+1]='\r';
+    return in; // returns the istream&
 }
 bool operator== ( const Line & line1, const Line & line2){
     /*strcmp(line1.cstr(), line2.cstr());*/

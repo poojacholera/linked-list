@@ -14,11 +14,11 @@
     <list default="true" id="37ff1c97-f1af-4493-b9af-945d9e66310d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Line.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Line.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LineList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LineList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Line.h" beforeDir="false" afterPath="$PROJECT_DIR$/Line.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LineList.h" beforeDir="false" afterPath="$PROJECT_DIR$/LineList.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LineListTestDriver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LineListTestDriver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyDriver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MyDriver.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment1.dir/Line.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment1.dir/LineList.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment1.dir/LineList.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment1.dir/LineListTestDriver.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment1.dir/LineListTestDriver.cpp.o" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -48,11 +48,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="225">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LineListTestDriver.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="127" column="43" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
+            <state relative-caret-position="-420">
+              <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#178#195#0" expanded="true" />
@@ -64,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Line.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="120">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
               <folding>
                 <element signature="e#94#113#0" expanded="true" />
               </folding>
@@ -73,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Line.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            <state relative-caret-position="225">
+              <caret line="90" column="21" lean-forward="true" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
               <folding>
                 <element signature="e#39#58#0" expanded="true" />
               </folding>
@@ -89,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/LineList.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-14">
-              <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding>
                 <element signature="e#39#60#0" expanded="true" />
               </folding>
@@ -123,7 +123,12 @@
       <find>cout</find>
       <find>main</find>
       <find>resiz</find>
+      <find>last</find>
+      <find>meet</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,11 +138,12 @@
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Line0.cpp" />
+        <option value="$PROJECT_DIR$/LineList.cpp" />
+        <option value="$PROJECT_DIR$/LineListTestDriver.cpp" />
         <option value="$PROJECT_DIR$/Line.h" />
         <option value="$PROJECT_DIR$/LineList.h" />
-        <option value="$PROJECT_DIR$/LineList.cpp" />
+        <option value="$PROJECT_DIR$/MyDriver.cpp" />
         <option value="$PROJECT_DIR$/Line.cpp" />
-        <option value="$PROJECT_DIR$/LineListTestDriver.cpp" />
       </list>
     </option>
   </component>
@@ -153,7 +159,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Assignment1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -220,23 +239,31 @@
       <workItem from="1559232110862" duration="10701000" />
       <workItem from="1559266616089" duration="1347000" />
       <workItem from="1559311736812" duration="6964000" />
-      <workItem from="1559443942612" duration="3006000" />
+      <workItem from="1559443942612" duration="5119000" />
     </task>
+    <task id="LOCAL-00001" summary="running Done!">
+      <created>1559447005427</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559447005428</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132344000" />
+    <option name="totallyTimeSpent" value="134457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="-17" width="1319" height="786" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.33011273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21188429" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24959743" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32961783" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39071855" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23652695" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6347305" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -278,6 +305,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="running Done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="running Done!" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -300,41 +332,6 @@
           <url>file://$PROJECT_DIR$/LineList.cpp</url>
           <line>172</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Line.cpp</url>
-          <line>122</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Line.cpp</url>
-          <line>116</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Line.cpp</url>
-          <line>119</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Line.cpp</url>
-          <line>120</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/LineListTestDriver.cpp</url>
-          <line>174</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/LineListTestDriver.cpp</url>
-          <line>177</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/LineListTestDriver.cpp</url>
-          <line>170</line>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/LineListTestDriver.cpp</url>
@@ -384,10 +381,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/5/ostream">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="173" column="26" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LineList.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#39#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LineListTestDriver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#178#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Line.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
             <element signature="e#94#113#0" expanded="true" />
           </folding>
@@ -401,40 +426,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LineList.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding>
-            <element signature="e#39#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/ostream">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="173" column="26" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Line.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        <state relative-caret-position="225">
+          <caret line="90" column="21" lean-forward="true" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
           <folding>
             <element signature="e#39#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LineListTestDriver.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="127" column="43" selection-start-line="127" selection-start-column="43" selection-end-line="127" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#178#195#0" expanded="true" />
           </folding>
         </state>
       </provider>

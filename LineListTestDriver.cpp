@@ -128,6 +128,9 @@ int main(){
     cout << "someLine: " << someLine.cstr()                       << endl; // ABXYZ
     cout << "len: "           << someLine.length()          << endl; // len: 5
     cout << "cap: "          << someLine.getCapacity() << endl; // cap: 8
+
+
+
 }
 
 int main1()
