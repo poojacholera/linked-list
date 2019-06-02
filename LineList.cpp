@@ -10,7 +10,7 @@ LineList::Node::Node(const Line &ln, LineList::Node *prv, LineList::Node *nxt): 
 
 //default ctor
 LineList::LineList() {
-    cout<<"in default LINELIST ctor"<<endl;
+  //  cout<<"in default LINELIST ctor"<<endl;
     this->theSize = 0;
 //    const char *s1 = "\0";
     Line dummyLine("hh");
@@ -38,7 +38,7 @@ void LineList::print(){
 //copy ctor
 LineList::LineList(const LineList &rhs) {
     //TODO
-    cout<<"in cpy LINELIST ctor"<<endl;
+  //  cout<<"in cpy LINELIST ctor"<<endl;
     if(!rhs.empty()){
         this->head = new Node(rhs.head->data, nullptr, nullptr);
         Node *current = rhs.head->next;
@@ -57,7 +57,7 @@ LineList::LineList(const LineList &rhs) {
 //copy assignment
 const LineList& LineList::operator=(const LineList& rhs){
     //Todo
-    cout<<"in copy assignment"<<endl;
+   // cout<<"in copy assignment"<<endl;
     if(&rhs != this) {// to prevent self-assignment
         while (!empty()){
             pop_front();
@@ -95,7 +95,7 @@ void LineList::push_front(const Line& line ){
         first = nullptr;
         delete first;
         theSize++;
-    cout<<size()<<" : "<<line.cstr()<<endl;
+   // cout<<size()<<" : "<<line.cstr()<<endl;
 }
 void LineList::push_back(const Line& line){
     //Todo
@@ -105,7 +105,7 @@ void LineList::push_back(const Line& line){
         last = nullptr;
         delete last;
         theSize++;
-    cout<<size()<<" : "<<line.cstr()<<endl;
+   // cout<<size()<<" : "<<line.cstr()<<endl;
 }
 void LineList::pop_front(){
     //Todo
@@ -165,7 +165,7 @@ void LineList::insert(const Line& line, int k){
         }
     }
     if(k == count){
-
+    //Node newNode(line, temp->prev, temp);
         temp->prev->next = new Node(line, temp->prev, temp);
         temp->prev = temp->prev->next;
         theSize++;
@@ -210,7 +210,7 @@ void LineList::remove(int k){
 //Line Returns the line at position k in this list
 Line LineList::get(int k) const{
     //TODO
-    cout<<"in get "<<k <<" the size :"<<size()<<endl;
+  //  cout<<"in get "<<k <<" the size :"<<size()<<endl;
     if (k == 1) return this->head->next->data;
     else if(k == size()) return this->tail->prev->data;
     else if (k < 1 || k > size()) return NULL;

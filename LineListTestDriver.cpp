@@ -21,7 +21,7 @@ void test_linked_list_operations(LineList&);
 
 // -------
 
-int main1(){
+int main(){
 
     //testing Line ctor
     /*const char *s = "meet";
@@ -29,39 +29,47 @@ int main1(){
     Line first(s);
     cout<<first.length()<<endl;
     cout<<first.cstr()<<endl;
-
-    //testing line copt ctor
-    const char *s1 = "meet";
-    Line line1(s1);
-
-    const char *s2 = "meetoo";
-    //test copy ctor
-    Line line2(line1);
-    cout<<line2.cstr()<< " " << line2.length()<<endl;
-    Line line3(s2);
-    //test copy assignment
-    line1 = line3;
-    cout<<line1.cstr()<< " " << line1.length()<<endl;
 */
-    /*// test pushback and popback-Line  and resize
-    const char *s2 = "meet";
+    //testing line copt ctor
+    /* const char *s1 = "meet";
+     Line line1(s1);
+     cout<<line1.cstr()<<endl;
+  //   const char *s2 = "meetoo";
+     //test copy ctor
+     Line line2(line1);
+     cout<<line2.cstr()<< " " << line2.length()<<endl;
+     Line line3(s2);
+    */
+ //  Line line2="abc";
+    //test copy assignment
+//    line2 = line1;
+   // cout<<line2.cstr()<< " " << line2.length()<<endl;
+/*
+
+    // test pushback and popback-Line  and resize
+    const char *s2 = "meeto";
     char c = 'p';
     //test copy ctor
     Line line2(s2);
+    cout<< line2.cstr() << ":" <<line2.length()<< ":" <<line2.getCapacity()<<endl;
     line2.push_back(c);
     cout<< line2.cstr() << ":" <<line2.length()<< ":" <<line2.getCapacity()<<endl;
+*/
+    /*
     line2.pop_back();
-    cout<< line2.cstr() << ":" <<line2.length()<< ":" <<line2.getCapacity()<<endl;*/
+    cout<< line2.cstr() << ":" <<line2.length()<< ":" <<line2.getCapacity()<<endl;
+/*
 
-    /*//test ==  !=   operator
-    const char *s1 = "blasoo";
+    //test ==  !=   operator
+    const char *s1 = "blasoo  2space";
     Line line1(s1);
-    const char *s2 = "blahoo";
+    const char *s2 = "blahoo  2space";
     Line line2(s2);
     cout<< (line1 == line2) <<endl;
-    cout << (line1 != line2) <<endl;*/
+    cout << (line1 != line2) <<endl;
+*/
 
-    //Testing pushback, push front, popback and pop front
+  /*  //Testing pushback, push front, popback and pop front
   const char *s1 = "blaspoo jaoo";
     const char *s2 = "spoo jaoo";
     Line line1(s1);
@@ -76,16 +84,16 @@ int main1(){
     list_a.push_front("pc");
     list_a.push_front("two");
     list_a.push_front("one");
-    /*  list_a.pop_back();
+    *//*  list_a.pop_back();
       list_a.pop_front();
-  */
+  *//*
     list_a.print();
-    /*list_a.get(2)<*/
+    *//*list_a.get(2)<*//*
     cout<<"GET :  "<<endl;
     //list_a.remove(6);
     list_a.insert(s1,2);
     list_a.print();
-
+*/
     //Testing Copy Assignment
      /*     LineList list_b {};
             list_b.push_front("two");
@@ -101,9 +109,28 @@ int main1(){
     /*//Testing Pushback _ LineList
         list_a.push_back(line1);
     list_a.print();*/
+  /*  char *lineptr="pooja";
+    char temp[10];
+    char *tempPtr=&temp[0];
+    strcpy(tempPtr,lineptr);
+
+
+    //temp=lineptr;  sizeof(lineptr)/
+
+    cout<<temp <<strlen(temp)<< sizeof(temp)<<endl;
+    cout<<lineptr<<strlen(lineptr)<< (sizeof(lineptr)/ sizeof(*lineptr))<<endl;*/
+
+
+    Line someLine("AB");          // lineLength = 2, capacity = 2
+    someLine.push_back('X');   // lineLength = 3, capacity = 4
+    someLine.push_back('Y');   // lineLength = 4, capacity = 4
+    someLine.push_back('Z');   // lineLength = 5, capacity = 8
+    cout << "someLine: " << someLine.cstr()                       << endl; // ABXYZ
+    cout << "len: "           << someLine.length()          << endl; // len: 5
+    cout << "cap: "          << someLine.getCapacity() << endl; // cap: 8
 }
 
-int main()
+int main1()
 {
    //const char * filename_a{ "C:\\input_a.txt" };
    const char * filename_a{ "/home/meet/Documents/5421/input_a.txt" };
@@ -146,7 +173,7 @@ void load_linked_list(const char *filename, LineList & line_list)
    while (getline(ifs, line)) // Read until end of file
    {
       ++lineno;
-      cout << "(" << lineno << ") " << line << endl;
+      //cout << "(" << lineno << ") " << line << endl;
       const char *c_line = line.c_str(); // const makes this a safe idea.
       // Get a pointer to the c-string represented by the C++ string object
       // ONLY because Line's Ctor in the call below expects a char *
