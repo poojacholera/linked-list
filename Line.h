@@ -22,8 +22,8 @@ class Line{
         virtual ~Line();      //Releases dynamic memory created and owned by this line
 
         char* cstr() const; //Returns C-style version of this line
-        const int length();
-        const bool empty();
+        int length() const;
+        bool empty() const;
         bool full() const;
         int getCapacity() const;
         void resize(); // Doubles capacity if this line is full

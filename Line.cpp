@@ -11,8 +11,6 @@ Line::Line(const char *text){
         lineLength=0;
         capacity=1;//lineLength;
         this->linePtr=new char[1];//points to a new char array
-//        *linePtr=*text;
-//        cout<<"after ctor work... "<<linePtr<<endl;
         int i=0;
         while (i<=(strlen(text)-1)){
             this->push_back(text[i]);
@@ -51,10 +49,10 @@ const Line& Line::operator=(const Line& rhs){
     return linePtr;
     //Returns C-style version of this line
 }
-const int Line::length(){
+int Line::length() const{
     return lineLength;
 }
-const bool Line::empty(){
+bool Line::empty() const{
     return (lineLength==0);
 }
 bool Line::full() const{
@@ -99,7 +97,12 @@ istream& operator>>( istream &in, Line& line){
     return in; // returns the istream&
 }
 bool operator==(const Line & line1, const Line & line2){
-    return (strcmp(line1.cstr(), line2.cstr())==0);
+
+    return (
+        (strcmp(line1.cstr(), line2.cstr())==0)
+        && (line1.getCapacity()==line2.getCapacity())
+        && (line1.length()==line2.length())
+    );
 }
 // free function
 bool operator!= ( const Line & line1, const Line & line2) {
