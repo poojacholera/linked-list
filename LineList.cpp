@@ -3,9 +3,7 @@
 //
 #include "LineList.h"
 #include "Line.h"
-
 using namespace std;
-
 /**
  * Node constructor to create a node
  * @param ln Line object is set as data of the current node
@@ -19,34 +17,18 @@ LineList::Node::Node(const Line &ln, LineList::Node *prv, LineList::Node *nxt): 
  * This initializes dummy Head and Tail nodes using Node constructor
  * */
 LineList::LineList() {
-  //  cout<<"in default LINELIST ctor"<<endl;
     this->theSize = 0;
 //    const char *s1 = "\0";
-    Line dummyLine("hh");
+    Line dummyLine("\0");
     Node *dummyHead = new Node(dummyLine, nullptr, nullptr);
     Node *dummyTail = new Node(dummyLine, nullptr, nullptr);
     this->head = dummyHead;
     this->tail = dummyTail;
     this->head->next = tail;
     this->tail->prev = head;
-    /*Node *n=new Node("abc",head,tail);*/
     dummyHead= nullptr;
     dummyTail= nullptr;
 }
-/**
- * print() : Print the list nodes data using loop
- * */
-void LineList::print(){
-    Node *temp = head->next;
-    int i=1;
-    while (temp->next != nullptr){
-        cout<<"( "<<i<<" )"<<"  "<<temp->data.cstr()<<endl;
-        temp=temp->next;
-        i++;
-    }
-    temp= nullptr;
-}
-//copy ctor
 /**
  * Copy constructor : creates object of LineList and copies the supplied object and its attributes
  *  @param rhs reference of LineList
@@ -77,7 +59,6 @@ const LineList& LineList::operator=(const LineList& rhs){
         while (!empty()){
             pop_front();
         }
-       // new (this) LineList (rhs);
         Node *temp = this->head;
         theSize = rhs.theSize;
         Node *current = rhs.head->next;
@@ -116,7 +97,6 @@ void LineList::push_front(const Line& line){
         first = nullptr;
         delete first;
         theSize++;
-   // cout<<size()<<" : "<<line.cstr()<<endl;
 }
 /** push_back() : creates new node with supplied Line object
  * and pushes into LineList from the tail node
@@ -130,8 +110,6 @@ void LineList::push_back(const Line& line){
         last = nullptr;
         delete last;
         theSize++;
-
-   // cout<<size()<<" : "<<line.cstr()<<endl;
 }
 /** pop_front() : removes node from the head node in LineList
  * */
@@ -207,7 +185,6 @@ void LineList::insert(const Line& line, int k){
         }
     }
     if(k == count){
-    //Node newNode(line, temp->prev, temp);
         temp->prev->next = new Node(line, temp->prev, temp);
         temp->prev = temp->prev->next;
         theSize++;
@@ -259,7 +236,6 @@ void LineList::remove(int k){
  * */
 Line LineList::get(int k) const{
     //TODO
-  //  cout<<"in get "<<k <<" the size :"<<size()<<endl;
     if (k == 1) return this->head->next->data;
     else if(k == size()) return this->tail->prev->data;
     else if (k < 1 || k > size()) return NULL;
@@ -283,5 +259,17 @@ Line LineList::get(int k) const{
     }
     delete temp;
     temp = nullptr;
-
+}
+/**
+ * print() : Print the list nodes data using loop
+ * */
+void LineList::print(){
+    Node *temp = head->next;
+    int i=1;
+    while (temp->next != nullptr){
+        cout<<"( "<<i<<" )"<<"  "<<temp->data.cstr()<<endl;
+        temp=temp->next;
+        i++;
+    }
+    temp= nullptr;
 }

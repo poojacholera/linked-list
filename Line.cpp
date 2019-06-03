@@ -21,6 +21,12 @@ Line::Line(const char *text){
             this->push_back(text[i]);
             i++;
         }
+    }else{
+        cout<<"in else"<<endl;
+        lineLength=0;   //initially length is 0
+        capacity=0;
+        this->linePtr=new char[1]{'\0'};//points to a new char array
+        cout<<"out of else"<<endl;
     }
     cout<<"after ctor work... "<<linePtr<<endl;
 //    cout<<" Line ctor"<<endl;
