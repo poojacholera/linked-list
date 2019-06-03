@@ -2,7 +2,7 @@
 // Created by pooja on 16/05/19.
 //
 
-#include <iostream>
+
 #include "Line.h"
 
 /**
@@ -11,7 +11,6 @@
  * @param text pointer to char array
  * */
 Line::Line(const char *text){
-    cout<<"received line: "<<text<<endl;
     if(strlen(text)>0){
         lineLength=0;   //initially length is 0
         capacity=1;
@@ -22,19 +21,10 @@ Line::Line(const char *text){
             i++;
         }
     }else{
-        cout<<"in else"<<endl;
         lineLength=0;   //initially length is 0
         capacity=0;
         this->linePtr=new char[1]{'\0'};//points to a new char array
-        cout<<"out of else"<<endl;
     }
-    cout<<"after ctor work... "<<linePtr<<endl;
-//    cout<<" Line ctor"<<endl;
-    /*capacity=strlen(text);
-    lineLength=capacity;
-    this->linePtr=new char[this->lineLength+1]{'\0'};//points to a new char array
-//    linePtr[lineLength]='\0';
-    strcpy(linePtr,text);*/
 }
 /**
  * Copy ctor : Delegates the construction of Line object to the conversion constructor
@@ -111,12 +101,11 @@ void Line::resize(){
     if(full()){
         this->capacity*=2;
         char *temp=new char[getCapacity()+1]{'\0'};
-//        temp[getCapacity()]='\0';
         strcpy(temp,linePtr);
         delete [] linePtr;
         linePtr=temp;
         temp=nullptr;
- }
+    }
 }
 /**
  * push_back() : Appends a character at he end of line(char array)
