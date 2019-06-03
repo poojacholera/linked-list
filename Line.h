@@ -8,20 +8,19 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-
 class Line{
     private:
-        char * linePtr; // Stores a pointer to the first character in a dynamically created array of char, effectively representing the underlying line of text.
-        int lineLength;  // Length of this line
+        char * linePtr;
+        int lineLength;
         int capacity;
     public:
         Line(const char* text);
-        Line(const Line&);//Copy Constructor
+        Line(const Line&);
         const Line& operator= ( const Line& rhs);
 
-        virtual ~Line();      //Releases dynamic memory created and owned by this line
+        virtual ~Line();
 
-        char* cstr() const; //Returns C-style version of this line
+        char* cstr() const;
         int length() const;
         bool empty() const;
         bool full() const;

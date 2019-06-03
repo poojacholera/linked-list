@@ -35,6 +35,5 @@ class LineList{
         void remove(int k);  //Removes node at position k in this list
         Line get(int k) const; //Line Returns the line at position k in this list
         void print();
-
 };
 #endif //ASSIGNMENT1_LINELIST_H

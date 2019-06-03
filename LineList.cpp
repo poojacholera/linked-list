@@ -6,9 +6,18 @@
 
 using namespace std;
 
+/**
+ * Node constructor to create a node
+ * @param ln Line object is set as data of the current node
+ * @param prv pointer to the previous node of the current node
+ * @param nxt pointer to the next node of the current node
+ * */
 LineList::Node::Node(const Line &ln, LineList::Node *prv, LineList::Node *nxt): data(ln), prev(prv), next(nxt) {}
 
-//default ctor
+/**
+ * LineList : Default constructor
+ * This initializes dummy Head and Tail nodes using Node constructor
+ * */
 LineList::LineList() {
   //  cout<<"in default LINELIST ctor"<<endl;
     this->theSize = 0;
@@ -24,7 +33,9 @@ LineList::LineList() {
     dummyHead= nullptr;
     dummyTail= nullptr;
 }
-//Print the list nodes data
+/**
+ * print() : Print the list nodes data using loop
+ * */
 void LineList::print(){
     Node *temp = head->next;
     int i=1;
@@ -36,9 +47,12 @@ void LineList::print(){
     temp= nullptr;
 }
 //copy ctor
-LineList::LineList(const LineList &rhs) {
+/**
+ * Copy constructor : creates object of LineList and copies the supplied object and its attributes
+ *  @param rhs reference of LineList
+ * */
+LineList::LineList(const LineList& rhs) {
     //TODO
-  //  cout<<"in cpy LINELIST ctor"<<endl;
     if(!rhs.empty()){
         this->head = new Node(rhs.head->data, nullptr, nullptr);
         Node *current = rhs.head->next;
@@ -54,11 +68,12 @@ LineList::LineList(const LineList &rhs) {
         last = nullptr;
     }return;
 }
-//copy assignment
+/**
+ * Copy assignment : copies one object of LineList to another
+ * @param rhs the object to be copied
+ * */
 const LineList& LineList::operator=(const LineList& rhs){
-    //Todo
-   // cout<<"in copy assignment"<<endl;
-    if(&rhs != this) {// to prevent self-assignment
+    if(&rhs != this) {//  condition to prevent self-assignment
         while (!empty()){
             pop_front();
         }
@@ -77,7 +92,10 @@ const LineList& LineList::operator=(const LineList& rhs){
     }
     return *this;
 }
-//Destructor
+/**
+ * Destructor : de-allocates the LineList object
+ * This function uses LineList::pop_front() function
+ * */
 LineList::~LineList(){
     while (!empty()){
         pop_front();
@@ -86,8 +104,11 @@ LineList::~LineList(){
     head = nullptr;
     tail= nullptr;
 }
-/**Push Line object from the head node*/
-void LineList::push_front(const Line& line ){
+/** push_front() : creates new node with supplied Line object
+ * and pushes into LineList from the head node
+ * @param line object of Line to be inserted
+ * */
+void LineList::push_front(const Line& line){
     //Todo
         Node *first = this->head->next;
         first->prev = new Node(line, this->head, this->head->next);
@@ -97,6 +118,10 @@ void LineList::push_front(const Line& line ){
         theSize++;
    // cout<<size()<<" : "<<line.cstr()<<endl;
 }
+/** push_back() : creates new node with supplied Line object
+ * and pushes into LineList from the tail node
+ * @param line object of Line to be inserted
+ * */
 void LineList::push_back(const Line& line){
     //Todo
         Node *last = this->tail->prev;
@@ -105,8 +130,11 @@ void LineList::push_back(const Line& line){
         last = nullptr;
         delete last;
         theSize++;
+
    // cout<<size()<<" : "<<line.cstr()<<endl;
 }
+/** pop_front() : removes node from the head node in LineList
+ * */
 void LineList::pop_front(){
     //Todo
     if(!empty()){
@@ -119,6 +147,8 @@ void LineList::pop_front(){
         theSize--;
     }
 }
+/** pop_back() : removes node from the tail node in LineList
+ * */
 void LineList::pop_back(){
     //todo
     if(!empty()){
@@ -131,15 +161,27 @@ void LineList::pop_back(){
         theSize--;
     }
 }
-//Returns the size of this list
-int LineList::size() const {
+/**
+ * size() : Returns the size of this LineList
+ * @return integer value of size
+ * */
+int LineList::size() const{
     return theSize;
 }
-// Returns whether this list is empty
+/**
+ * empty() : Returns whether this LineList is empty
+ * * @return boolean value
+ * */
 bool LineList::empty() const{
     return (head->next == tail);
 }
-//Inserts a new line at position k in this list
+/**
+ * insert() : Inserts a new line at position k in this list
+ * If the @param k is in first half of List, the search will start from head otherwise from tail
+ * This function uses push_front function to to insert if the @param k is next to head
+ * @param line reference of object of class Line
+ * @param k position at which the new Line Object to be added
+ * */
 void LineList::insert(const Line& line, int k){
     //Todo
     if (k < 1 || k > size()) return;
@@ -172,7 +214,10 @@ void LineList::insert(const Line& line, int k){
     }
     temp = nullptr;
 }
-//Removes node at position k in this list
+/**
+ * reomve() : Removes node at position k in this list
+ * @param k the position of the node to be removed
+ * */
 void LineList::remove(int k){
     //Todo
     if (k < 1 || k > size()) return;
@@ -207,7 +252,11 @@ void LineList::remove(int k){
     delete temp;
     temp = nullptr;
 }
-//Line Returns the line at position k in this list
+/**
+ * get() : searches the node at position supplied to get Line Object of that node
+ * If the @param k is in first half of List, the search will start from head otherwise from tail
+ * @return returns the line at position k in this list
+ * */
 Line LineList::get(int k) const{
     //TODO
   //  cout<<"in get "<<k <<" the size :"<<size()<<endl;

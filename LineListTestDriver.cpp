@@ -162,7 +162,7 @@ int main1(){
 
 
 
-    Line newLine("pooja");
+    /*Line newLine("pooja");
     int i=newLine.getCapacity()-1;
     while(i>=0){
         if(newLine.linePtr[i]=='\0')
@@ -171,7 +171,7 @@ int main1(){
             cout<<newLine.linePtr[i]<<" false"<<endl;
         }
         i--;
-    }
+    }*/
 
 }
 
