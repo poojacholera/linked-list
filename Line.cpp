@@ -36,8 +36,8 @@ Line::Line(const Line& line):Line(line.linePtr){}
  * Line Destructor : deallocates the array object pointed by linePtr and then frees the linePtr
  * */
  Line::~Line(){
-   delete [] linePtr;
-   linePtr= nullptr;
+    linePtr= nullptr;
+    delete [] linePtr;
 }
 /**
  * Copy assignment : Overloads assignment operator to copy one Line object from another Line object

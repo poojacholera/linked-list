@@ -18,7 +18,6 @@ LineList::Node::Node(const Line &ln, LineList::Node *prv, LineList::Node *nxt): 
  * */
 LineList::LineList() {
     this->theSize = 0;
-//    const char *s1 = "\0";
     Line dummyLine("\0");
     Node *dummyHead = new Node(dummyLine, nullptr, nullptr);
     Node *dummyTail = new Node(dummyLine, nullptr, nullptr);
